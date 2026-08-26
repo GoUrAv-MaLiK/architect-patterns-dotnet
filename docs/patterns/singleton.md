@@ -16,3 +16,8 @@ final class Config { private static final Config I = new Config(); private Confi
 Architect terms:
 - Global state risk
 - Prefer DI containers over hard singletons in apps
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Singleton
+.cs`

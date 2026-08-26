@@ -1,0 +1,3 @@
+﻿using System;
+namespace ArchitectPatterns.ConsoleApp.Patterns;
+public sealed class CircuitBreaker { private readonly int _threshold; private readonly TimeSpan _reset; private int _fails; private DateTime _opened=DateTime.MinValue; public CircuitBreaker(int threshold, TimeSpan reset){ _threshold=threshold; _reset=reset; } public T Execute<T>(Func<T> action){ if(IsOpen()){ if(DateTime.UtcNow - _opened < _reset) throw new InvalidOperationException("circuit open"); _fails=0; } try{ var r=action(); _fails=0; return r; } catch{ _fails++; if(_fails>=_threshold){ _opened=DateTime.UtcNow; } throw; } } private bool IsOpen()=> _fails>=_threshold; }

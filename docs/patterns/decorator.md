@@ -15,3 +15,8 @@ public sealed class CachingRepo : IRepository { private readonly IRepository _in
 Architect terms:
 - Composition over inheritance
 - Behavior layering
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Decorator
+.cs`

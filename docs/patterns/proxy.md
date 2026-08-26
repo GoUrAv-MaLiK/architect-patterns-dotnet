@@ -15,3 +15,8 @@ public sealed class LazyImageProxy : IImage { private IImage _real; public void 
 Architect terms:
 - Access mediation
 - Lazy/eager trade-offs
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Proxy
+.cs`

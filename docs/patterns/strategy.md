@@ -33,3 +33,8 @@ Trade-offs:
 - + Extensible behaviors
 - - More types to manage
 - - Strategy selection logic moves to client
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Strategy
+.cs`

@@ -24,3 +24,8 @@ Architect terms:
 - Creation encapsulation
 - Substitution by contract
 - Test seams via factories
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+FactoryMethod
+.cs`

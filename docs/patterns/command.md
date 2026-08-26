@@ -20,3 +20,8 @@ final class Invoker { private final java.util.Queue<Command> q=new java.util.Arr
 Architect terms:
 - Task abstraction
 - Reliability patterns (retries, DLQs)
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Command
+.cs`

@@ -23,3 +23,8 @@ Architect terms:
 Trade-offs:
 - + Decouples producers/consumers
 - - Ordering and backpressure need design
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Observer
+.cs`

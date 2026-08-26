@@ -14,3 +14,8 @@ public sealed class Group : INode { private readonly System.Collections.Generic.
 Architect terms:
 - Uniform interfaces
 - Recursive composition
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Composite
+.cs`

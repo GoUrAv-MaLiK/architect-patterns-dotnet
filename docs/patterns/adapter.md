@@ -15,3 +15,8 @@ public sealed class LegacyAdapter : IPayment { private readonly LegacyPay _p=new
 Architect terms:
 - Anti-corruption layer (DDD)
 - Boundary mapping and impedance matching
+
+## Code
+- C#: `src/ArchitectPatterns.Console/Patterns/
+Adapter
+.cs`
