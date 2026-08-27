@@ -1,21 +1,21 @@
-﻿# Facade Pattern
+﻿# Facade
 
-What it is:
-Provide a simple API over a complex set of subsystems.
+What it is
+Provide a single, simple API that orchestrates multiple subsystems.
 
-When to use:
-- Hide multi-step workflows
-- Provide stable boundary to clients
+Classic mechanics
+- A public Facade class exposes a minimal surface.
+- Internally it calls encoder/uploader/repository/etc. in order, handling errors.
 
-C# example:
-public sealed class VideoEncoder{ public void Encode(string path){} }
-public sealed class CdnUploader{ public void Upload(string path){} }
-public sealed class MediaService{ private readonly VideoEncoder _e=new(); private readonly CdnUploader _u=new(); public void TranscodeAndPublish(string path){ _e.Encode(path); _u.Upload(path); } }
+Deep dive
+- Orchestration vs choreography: Facade owns ordering and error handling, not the callees.
+- Idempotency: define what happens on retry; make repeated calls safe where possible.
+- Failure policy: which errors bubble vs translate to domain errors.
+- Observability: emit one trace/span that encloses all internal calls.
 
-Architect terms:
-- API surface minimization
-- Encapsulation of orchestration
+Modern .NET
+- Keep the facade thin; business rules live in domain services it composes.
+- Surface timeouts and cancellation tokens; use resilience policies (Polly) when calling IO.
 
 ## Code
 - C#: [Facade.cs](../../src/ArchitectPatterns.Console/Patterns/Facade.cs)
-
