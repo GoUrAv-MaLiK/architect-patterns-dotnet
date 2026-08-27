@@ -1,26 +1,23 @@
 ﻿# Command Pattern
 
-What it is:
-Encapsulate a request as an object to queue, log, retry, or compose operations.
+What it is
+Encapsulate a request so you can queue, log, retry, or undo.
 
-When to use:
-- Undo/redo, task queues, retries
-- Decouple invokers from receivers
+Classic mechanics
+- ICommand.Execute() holds intent and data.
+- Invoker schedules; receiver performs the action.
 
-C# example:
-public interface ICommand { void Execute(); }
-public sealed class EmailCommand : ICommand { public void Execute(){ /* send email */ } }
-public sealed class Invoker { private readonly System.Collections.Generic.Queue<ICommand> _q=new(); public void Enqueue(ICommand c)=>_q.Enqueue(c); public void Run(){ while(_q.Count>0) _q.Dequeue().Execute(); } }
+Deep dive
+- Reliability: idempotency keys for safe retries.
+- Ordering: define guarantees if commands interact.
+- Auditing: commands provide a durable intent log.
 
-Java example:
-interface Command { void execute(); }
-final class EmailCommand implements Command { public void execute(){ /* send */ } }
-final class Invoker { private final java.util.Queue<Command> q=new java.util.ArrayDeque<>(); void enqueue(Command c){ q.add(c);} void run(){ while(!q.isEmpty()) q.remove().execute(); } }
+Modern .NET
+- In-proc: simple queue with handlers.
+- Cross-proc: enqueue to a broker and use backoff with resilience policies.
 
-Architect terms:
-- Task abstraction
-- Reliability patterns (retries, DLQs)
+Pitfalls
+- Hidden coupling between commands; document preconditions.
 
 ## Code
 - C#: [Command.cs](../../src/ArchitectPatterns.Console/Patterns/Command.cs)
-

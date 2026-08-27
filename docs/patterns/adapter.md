@@ -1,21 +1,25 @@
 ﻿# Adapter Pattern
 
-What it is:
-Convert one interface into another clients expect without changing the underlying system.
+What it is
+Convert one interface into another that clients expect, without changing the underlying system.
 
-When to use:
-- Integrate with legacy or third-party APIs
-- Keep your domain model clean
+Classic mechanics
+- Target interface: what your code wants to call.
+- Adaptee: legacy or third-party component.
+- Adapter: translates calls, types, and error semantics.
 
-C# example:
-public interface IPayment { void Charge(decimal amount); }
-public sealed class LegacyPay { public void MakePayment(int cents){} }
-public sealed class LegacyAdapter : IPayment { private readonly LegacyPay _p=new(); public void Charge(decimal amount){ _p.MakePayment((int)(amount*100)); } }
+Deep dive
+- Mapping: convert DTOs and error codes to domain types and exceptions.
+- Direction: uni-directional (preferred) vs bi-directional (harder to maintain).
+- Boundaries: treat the adapter as an anti-corruption layer around vendors.
 
-Architect terms:
-- Anti-corruption layer (DDD)
-- Boundary mapping and impedance matching
+Modern .NET
+- Keep adapters thin; move business logic into domain services.
+- Convert exceptions to domain errors; normalize retries and timeouts above.
+
+Pitfalls
+- Leaking vendor types across the boundary.
+- Putting business rules into the adapter.
 
 ## Code
 - C#: [Adapter.cs](../../src/ArchitectPatterns.Console/Patterns/Adapter.cs)
-
