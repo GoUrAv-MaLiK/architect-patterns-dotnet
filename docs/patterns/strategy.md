@@ -35,6 +35,5 @@ Trade-offs:
 - - Strategy selection logic moves to client
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Strategy
-.cs`
+- C#: [Strategy.cs](../../src/ArchitectPatterns.Console/Patterns/Strategy.cs)
+

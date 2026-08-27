@@ -16,6 +16,5 @@ Architect terms:
 - Recursive composition
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Composite
-.cs`
+- C#: [Composite.cs](../../src/ArchitectPatterns.Console/Patterns/Composite.cs)
+

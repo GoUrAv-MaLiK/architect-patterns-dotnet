@@ -8,4 +8,8 @@ When to use:
 - Independent scaling and validation paths
 
 Code
-- C#: `src/ArchitectPatterns.Console/Patterns/Cqrs.cs`
+- C#: [Cqrs.cs](../../src/ArchitectPatterns.Console/Patterns/Cqrs.cs)
+
+## Code
+- C#: [Cqrs.cs](../../src/ArchitectPatterns.Console/Patterns/Cqrs.cs)
+

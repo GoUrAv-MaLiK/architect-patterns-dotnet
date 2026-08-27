@@ -22,6 +22,5 @@ Architect terms:
 - Reliability patterns (retries, DLQs)
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Command
-.cs`
+- C#: [Command.cs](../../src/ArchitectPatterns.Console/Patterns/Command.cs)
+

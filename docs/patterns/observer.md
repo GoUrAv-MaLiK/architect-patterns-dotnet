@@ -25,6 +25,5 @@ Trade-offs:
 - - Ordering and backpressure need design
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Observer
-.cs`
+- C#: [Observer.cs](../../src/ArchitectPatterns.Console/Patterns/Observer.cs)
+

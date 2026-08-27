@@ -17,6 +17,5 @@ Architect terms:
 - Boundary mapping and impedance matching
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Adapter
-.cs`
+- C#: [Adapter.cs](../../src/ArchitectPatterns.Console/Patterns/Adapter.cs)
+

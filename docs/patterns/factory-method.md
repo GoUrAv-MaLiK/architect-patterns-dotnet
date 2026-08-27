@@ -26,6 +26,5 @@ Architect terms:
 - Test seams via factories
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-FactoryMethod
-.cs`
+- C#: [FactoryMethod.cs](../../src/ArchitectPatterns.Console/Patterns/FactoryMethod.cs)
+

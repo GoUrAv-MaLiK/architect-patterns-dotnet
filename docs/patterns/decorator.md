@@ -17,6 +17,5 @@ Architect terms:
 - Behavior layering
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Decorator
-.cs`
+- C#: [Decorator.cs](../../src/ArchitectPatterns.Console/Patterns/Decorator.cs)
+

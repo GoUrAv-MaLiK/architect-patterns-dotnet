@@ -17,6 +17,5 @@ Architect terms:
 - Encapsulation of orchestration
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Facade
-.cs`
+- C#: [Facade.cs](../../src/ArchitectPatterns.Console/Patterns/Facade.cs)
+

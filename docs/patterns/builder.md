@@ -21,6 +21,5 @@ Architect terms:
 - Readability over telescoping constructors
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Builder
-.cs`
+- C#: [Builder.cs](../../src/ArchitectPatterns.Console/Patterns/Builder.cs)
+

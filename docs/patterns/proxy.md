@@ -17,6 +17,5 @@ Architect terms:
 - Lazy/eager trade-offs
 
 ## Code
-- C#: `src/ArchitectPatterns.Console/Patterns/
-Proxy
-.cs`
+- C#: [Proxy.cs](../../src/ArchitectPatterns.Console/Patterns/Proxy.cs)
+
