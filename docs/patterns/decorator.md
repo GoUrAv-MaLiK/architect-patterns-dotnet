@@ -1,21 +1,22 @@
 ﻿# Decorator Pattern
 
-What it is:
-Attach additional behavior to objects dynamically without modifying the original class.
+What it is
+Wrap an implementation to add behavior before/after calls without modifying the original class.
 
-When to use:
-- Cross-cutting concerns (logging, caching, auth)
-- Compose behaviors at runtime
+Classic mechanics
+- Shared interface for component and decorator.
+- Decorator holds an inner component and forwards calls with extra behavior.
 
-C# example:
-public interface IRepository { object Get(int id); }
-public sealed class DbRepo : IRepository { public object Get(int id)=> new object(); }
-public sealed class CachingRepo : IRepository { private readonly IRepository _inner; public CachingRepo(IRepository inner){ _inner=inner;} public object Get(int id){ /* lookup cache then */ return _inner.Get(id);} }
+Deep dive
+- Great for cross cutting concerns: caching, logging, metrics, authorization.
+- Stacking: order matters (e.g., cache inside retry vs outside).
 
-Architect terms:
-- Composition over inheritance
-- Behavior layering
+Modern .NET
+- Register decorators with DI; keep each decorator single responsibility.
+- Make wrappers transparent in exceptions and telemetry.
+
+Pitfalls
+- Very deep chains reduce debuggability; add tracing and names.
 
 ## Code
 - C#: [Decorator.cs](../../src/ArchitectPatterns.Console/Patterns/Decorator.cs)
-

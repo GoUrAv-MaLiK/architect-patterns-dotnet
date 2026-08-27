@@ -1,20 +1,18 @@
 ﻿# Composite Pattern
 
-What it is:
-Treat part-whole hierarchies uniformly; clients operate on single objects and compositions with the same interface.
+What it is
+Treat part whole hierarchies uniformly by using the same interface for leaves and groups.
 
-When to use:
-- Tree structures (menus, org charts, UI components)
+Classic mechanics
+- Composite keeps a collection of the same interface.
+- Operations recurse down the tree and combine results.
 
-C# example:
-public interface INode{ int Size(); }
-public sealed class Leaf : INode { public int Size()=>1; }
-public sealed class Group : INode { private readonly System.Collections.Generic.List<INode> _children=new(); public void Add(INode n)=>_children.Add(n); public int Size(){ int s=0; foreach(var c in _children) s+=c.Size(); return s; } }
+Deep dive
+- Aggregation rules: define associativity and identity (e.g., sum starts at 0).
+- Performance: cache expensive results and invalidate on change.
 
-Architect terms:
-- Uniform interfaces
-- Recursive composition
+Modern .NET
+- Prefer immutable structures when feasible; otherwise expose explicit mutation methods.
 
 ## Code
 - C#: [Composite.cs](../../src/ArchitectPatterns.Console/Patterns/Composite.cs)
-

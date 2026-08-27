@@ -1,21 +1,20 @@
 ﻿# Proxy Pattern
 
-What it is:
-Provide a stand-in that controls access to a real object (lazy load, remote, security, cache).
+What it is
+Provide a stand in that controls access to a real object (lazy load, remote call, or protection).
 
-When to use:
-- Control access or add policy
-- Virtual/remote resources
+Classic mechanics
+- Virtual proxy: instantiate the heavy object on first use.
+- Remote proxy: hide RPC transport and marshaling.
+- Protection proxy: enforce policy before delegation.
 
-C# example:
-public interface IImage { void Render(); }
-public sealed class Image : IImage { public void Render(){ /* draw */ } }
-public sealed class LazyImageProxy : IImage { private IImage _real; public void Render(){ _real ??= new Image(); _real.Render(); } }
+Deep dive
+- Expose timeouts, retries, and cancellation explicitly for remote proxies.
+- Avoid surprising caching; document lifetime and consistency.
 
-Architect terms:
-- Access mediation
-- Lazy/eager trade-offs
+Modern .NET
+- Use HttpClientFactory and resilience policies for remote proxies.
+- Consider dynamic proxies for AOP like concerns in infrastructure code.
 
 ## Code
 - C#: [Proxy.cs](../../src/ArchitectPatterns.Console/Patterns/Proxy.cs)
-
